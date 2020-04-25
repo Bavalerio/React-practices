@@ -1,24 +1,17 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import ReactPlayer from "react-player";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ReactPlayer
+        url="https://www.youtube.com/watch?v=WpYeekQkAdc&list=RDWpYeekQkAdc&start_radio=1"
+        controls
+        onReady={() => console.log("onReady Callback")}
+        onStart={() => console.log("onStart Callback")}
+        onPause={() => console.log("onPause Callback")}
+        onEnded={() => console.log("onEnded Callback")}
+        onError={() => console.log("onError Callback")}
+      />
     </div>
   );
 }
